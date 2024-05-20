@@ -43,6 +43,8 @@ tanzu build config --build-plan-source custom-build-plan
 
 This uses a custom `containerTask` that implements a simple python script to copy info from the containerapp output and generate a httproute yaml file.
 
+A containerTask is simply an additional step that is executed during the build in a custom built container. The build will pull down the container image and execute it with access to some specific build related environment vars and directories. In this case the image has a sample httproute yaml file and a python script.the script is executed on container startup and reads values from the generated containerapp and uses them to populate the httproute appropriately. It then writes out the httproute yaml into the output dir which is then used during the deploy.
+
 
 # Contributing 
 This is only needed for Development 
