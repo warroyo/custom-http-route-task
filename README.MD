@@ -38,6 +38,11 @@ tanzu build config --build-plan-source custom-build-plan
 
 3. deploy or build your app and check the output for the httproute
 
+```bash
+tanzu space use <myspace>
+tanzu deploy
+```
+
 
 ## How it works
 
