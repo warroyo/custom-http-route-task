@@ -19,7 +19,7 @@ add the following to the `runtimes["kubernetes-carvel-package"].steps` section
 
 ```yaml
   - name: add-route
-    containertask:
+    containerTask:
       image: warroyo90/add-http-route-task
 ```
 
