@@ -17,6 +17,7 @@ with open(workspaceDir + '/httproute.yml', 'r') as file:
 httproute["metadata"]["name"] = containerapp["metadata"]["name"] + "-http-route"
 httproute["metadata"]["annotations"]["healthcheck.gslb.tanzu.vmware.com/service"] = containerapp["metadata"]["name"]
 httproute["metadata"]["annotations"]["healthcheck.gslb.tanzu.vmware.com/port"] = "443"
+httproute["metadata"]["annotations"]["apps.tanzu.vmware.com/promote-group"] = "ContainerApp/"+containerapp["metadata"]["name"]
 
 httproute["spec"]["parentRefs"][0]["sectionName"] = "https-"+containerapp["metadata"]["name"]
 httproute["spec"]["rules"][0]["backendRefs"][0]["name"] = containerapp["metadata"]["name"]
