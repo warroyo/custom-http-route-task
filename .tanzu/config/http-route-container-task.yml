@@ -9,6 +9,3 @@ spec:
   build:
     buildpacks: {}
     path: ../..
-  ports:
-  - name: main
-    port: 8080

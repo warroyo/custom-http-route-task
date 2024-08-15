@@ -5,15 +5,11 @@ metadata:
   annotations:
     apps.tanzu.vmware.com/promote-group: ""
     apps.tanzu.vmware.com/promotable: ""
-    healthcheck.gslb.tanzu.vmware.com/service: placeholder
-    healthcheck.gslb.tanzu.vmware.com/path: /
-    healthcheck.gslb.tanzu.vmware.com/port: "80"
 spec:
   parentRefs:
-  - group: gateway.networking.k8s.io
-    kind: Gateway
-    name: default-gateway
-    sectionName: https-placeholder
+  - group: networking.tanzu.vmware.com
+    kind: Entrypoint
+    name: main
   rules:
   - backendRefs:
     - group: ""
