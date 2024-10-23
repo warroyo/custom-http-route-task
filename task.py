@@ -3,15 +3,13 @@
 import yaml
 import os
 
-
 workspaceDir = os.environ.get('TANZU_BUILD_WORKSPACE_DIR')
-cnb_dir = os.environ.get('CNB_APP_DIR')
 
 print("creating httproute")
 with open(workspaceDir + '/output/containerapp.yml', 'r') as file:
     containerapp = yaml.safe_load(file)
 
-with open(cnb_dir + '/httproute.yml', 'r') as file:
+with open('/workspace/httproute.yml', 'r') as file:
     httproute = yaml.safe_load(file)
 
 
